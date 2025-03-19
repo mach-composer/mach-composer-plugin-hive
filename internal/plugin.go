@@ -37,6 +37,7 @@ func NewHivePlugin() schema.MachComposerPlugin {
 		// Renders
 		RenderTerraformProviders: state.TerraformRenderProviders,
 		RenderTerraformResources: state.TerraformRenderResources,
+		RenderTerraformComponent: state.RenderTerraformComponent,
 	})
 }
 
@@ -119,4 +120,20 @@ func (p *Plugin) getSiteConfig(site string) *HiveConfig {
 		cfg = &HiveConfig{}
 	}
 	return cfg.extendConfig(p.globalConfig)
+}
+
+func (p *Plugin) RenderTerraformComponent(site string, _ string) (*schema.ComponentSchema, error) {
+	cfg := p.getSiteConfig(site)
+	if cfg == nil {
+		return nil, nil
+	}
+
+	result := &schema.ComponentSchema{
+		Providers: []string{
+			"hive = hive",
+		},
+		DependsOn: []string{},
+	}
+
+	return result, nil
 }
