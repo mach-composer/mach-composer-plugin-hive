@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "required": [
+        "token"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "token": {
+            "type": "string"
+        },
+        "endpoint": {
+            "type": "string"
+        }
+    },
+    "description": "Generic Hive configuration."
+}
