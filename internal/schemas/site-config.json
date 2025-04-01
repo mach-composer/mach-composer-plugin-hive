@@ -10,6 +10,9 @@
         },
         "endpoint": {
             "type": "string"
+        },
+        "organization": {
+            "type": "string"
         }
     },
     "description": "Site based Hive configuration."

@@ -106,6 +106,7 @@ func (p *Plugin) TerraformRenderResources(site string) (string, error) {
 		provider "hive" {
 	       {{ renderProperty "token" .Token }}
 	       {{ renderOptionalProperty "endpoint" .Endpoint }}
+	       {{ renderOptionalProperty "organization" .Organization }}
 	    }
 	`
 	return helpers.RenderGoTemplate(template, cfg)
