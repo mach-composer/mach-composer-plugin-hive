@@ -19,7 +19,7 @@ type Plugin struct {
 
 func NewHivePlugin() schema.MachComposerPlugin {
 	state := &Plugin{
-		provider:    "0.1.6",
+		provider:    "0.2.0",
 		siteConfigs: map[string]*HiveConfig{},
 	}
 	return plugin.NewPlugin(&schema.PluginSchema{
